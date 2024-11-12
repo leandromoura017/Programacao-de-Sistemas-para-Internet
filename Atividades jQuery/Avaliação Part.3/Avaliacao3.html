@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>jQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+</head>
+<body>
+
+<div class="container-fluid p-5 bg-info  text-white text-center">
+  <h1>Prova de jQuey Quetão 1</h1> 
+</div>
+  
+<div class="container mt-5">
+
+    
+    <h1>Média da disciplina de Programação de Sistemas para a internet</h1>
+    <form>
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <label>Nota do 1 Bim</label>
+                <input id="nota1" type="number" class="form-control" name="nota1" placeholder="1 Bim" aria-label="1 Bim">
+            </div>
+            <div class="col-2">
+                <label>Nota do 2 Bim</label>
+                <input id="nota2" type="number" class="form-control" name="nota2" placeholder="2 Bim" aria-label="2 Bim">
+            </div>
+            <div class="col-2">
+                <label>Nota do 3 Bim</label>
+                <input id="nota3" type="number" class="form-control" name="nota3" placeholder="3 Bim" aria-label="3 Bim">
+            </div>
+            <div class="col-2">
+                <label>Nota do 4 Bim</label>
+                <input id="nota4" type="number" class="form-control" name="nota4" placeholder="4 Bim" aria-label="4 Bim">
+            </div>
+            <div class="col-2">
+                <label>Média</label>
+                <input id="media" type="text" class="form-control media" name="media" placeholder="Média" aria-label="Média">
+            </div>
+        </div>
+        <div class="row justify-content-start py-3">
+            <div id="divavalFinal" class="col-2">
+                <label for="avalFinal">Avaliação final</label>
+                <input id="avalFinal" type="text" class="form-control pf" name="avalFinal" placeholder="Avaliação final" aria-label="Prova final">
+            </div>
+            <div id="divmediaF" class="col-2">
+                <label for="mediaF">Média final</label>
+                <input id="mediaF" type="text" class="form-control mediaF" name="mediaF" placeholder="Média Final" aria-label="Média Final">
+            </div>
+
+        </div>
+        <div class="row justify-content-start">
+            <div id="aviso"><h1></h1></div>
+        </div>
+    </form>
+</div>
+
+<script>
+
+    // esconde as div's 
+
+    $('#divavalFinal').hide()
+    $('#divmediaF').hide()
+
+    //declaração das variáveis
+
+    var nota1 = 0,nota2 = 0, nota3 = 0,nota4 = 0,media = 0;
+
+    $(document).ready(function(event){
+
+        $("[name^='nota']").change(function(event){
+ 
+        //pegando as notas dos campos inputs
+
+        nota1 = parseInt($('#nota1').val());
+        nota2 = parseInt($('#nota2').val());
+        nota3 = parseInt($('#nota3').val());
+        nota4 = parseInt($('#nota4').val());
+
+        //formula para cálculo de média
+
+        media = ((nota1*2) + (nota2*2) + (nota3*3) + (nota4*3)) / 10;
+        
+        //mostra o resultado no input name=media
+        
+        if ($("[name^='nota']").val != '') {
+            $("input[name='media']").val(media);
+        };
+
+        // mostra na div com o id aviso que foi aprovado 
+
+        if (media >= 60) {
+            $('#aviso').text("Aprovado(a)").css("color","blue")
+        };
+
+        // mostra na div com id aviso que foi reprovado 
+
+        if (media < 20 ) {
+            $('#aviso').text("Reprovado(a)").css("color","red")
+        }
+
+        // mostra a função com os operadores de caso ficar em prova final 
+
+        if (media >= 20 && media <= 59) {
+            $('#divavalFinal').show()
+            $('#divmediaF').show()
+            var avalFinal = 0, mediaF = 0;
+            $(document).ready(function(event){
+                $('#avalFinal').change(function(event){
+                    avalFinal = parseInt($('#avalFinal').val());
+
+                    mediaF = (media + avalFinal) / 2;
+
+                    $('#mediaF').val(mediaF);
+
+                    if (mediaF >= 60) {
+                        $('#aviso').text("Aprovado(a)").css("color","blue")
+                    };
+
+                    if (mediaF <= 59 ) {
+                        $('#aviso').text("Reprovado(a)").css("color","red")
+                    };
+
+        });
+        });
+        
+        }
+
+        });
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>jQuery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container-fluid p-5 bg-info text-white text-center">
+    <h1>Séries & Filmes</h1> 
+    </div>
+    
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+        <h3>Anne With an E</h3>
+        <p>Depois de treze anos sofrendo no sistema de assistência social,
+            a orfã Anne é mandada para morar com uma solteirona e seu irmão. Munida de sua imaginação e de seu intelecto,
+            a pequena Anne vai transformar a vida de sua família adotiva e da cidade que lhe abrigou,
+            lutando pela sua aceitação e pelo seu lugar no mundo.</p>
+            <ol>   
+            <li>Amybeth McNulty</li>
+            <li>Lucas Jade Zumann</li>
+            <li>Dalila Bela</li>
+            </ol>
+            </div>
+        <div class="col-sm-4">
+        <h3>Meu primeiro amor</h3>
+        <p>Vada Sultenfuss (Anna Chlumsky), uma garota de 11 anos, é obcecada com a morte,
+            pois sua mãe morreu e seu pai, Harry Sultenfuss (Dan Aykroyd), é um agente funerário que não lhe dá a devida atenção. 
+            Vada é apaixonada por Jake Bixler (Griffin Dunne), seu professor de inglês,
+            e no verão faz parte de uma classe de poesia só para impressioná-lo.</p>
+        <ol>
+            <li> Macaulay Culkin</li>
+            <li>Anna Chlumsky</li>
+            <li>Dan Aykroyd</li>
+        </ol>            
+        </div>
+        <div class="col-sm-4">
+        <h3>Stranger Things</h3>        
+        <p>Situada no início dos anos 1980, Stranger Things se passa na cidade rural fictícia de Hawkins, Indiana. 
+            Como fachada, o laboratório da região realizava experimentos científicos para o Departamento de Energia Americano, 
+            quando na realidade, os pesquisadores ali investiram em experimentos com o paranormal e o sobrenatural,
+            incluindo o uso de cobaias humanas.</p>
+        <ol>
+            <li>Millie Bobby Brown</li>
+            <li>Gaten Matarazzo</li>
+            <li>Jim Hopper</li>
+        </ol>
+        <div>
+        <textarea  class="form-control" id="Copia" rows="1" cols="23"></textarea>
+        
+        <button type="button" class="btn mt-3 mb-3 btn-info" id="cp">Copiar</button>
+        <div id="final"></div>
+    </div>
+    <div class="col-sm-4 coluna2">
+        <input type="text" class="form-control" name="textarea" id="textarea">
+        Digitos: <span class="total"></span> 
+
+    </div> 
+
+        </div>
+        
+    <div class="col-sm-2" id="1">
+            <button type="button" class="btn btn-info" id="trocarTexto" >Trocar texto</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info" id="clicado" >Clique aqui</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info" id="cor" >Mudar cor do texto</button>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-info" id="it" >Mudar cor do item 1</button>
+        </div>
+    
+        <div id="bt" class="container-fluid rodape">
+        <button type="button" class="btn mt-4 btn-info" id="copiar">Clone</button>
+    </div> 
+        
+
+    </div>
+
+    </div>
+    <script>
+    
+        $('#cp').click(function(event){
+        var valor = $('#Copia').val()
+        $('#final').html(valor)
+        });
+
+        $('#trocarTexto').click(function(event){
+            $('p').text('“Alterado pelo clique do botão”.');
+        });
+
+        $('#clicado').click(function(event){
+            $('#clicado').text('Já clicou');
+        })
+
+        var id = 1
+        $("#copiar").click(function() {
+            $('#copiar').clone('id', 'copiar'+id).appendTo('#bt')
+            var id = id++
+        });
+
+        $('#cor').click(function(){
+            $("p").css("color", "blue");
+        });
+
+        $('#it').click(function(){
+            $("div li:first-child").css("color", "red");
+        });
+
+        $(document).ready(function() {
+            $('#textarea').keyup(function (el) {
+        
+            $(this).val($(this).val().replace(/[^a-zA-Zà-úÀ-Ú ]/g,''));
+            var nome = document.getElementById('textarea');
+        
+            var espacos = (nome.value.split(" ").length - 1);
+        
+            var letras = nome.value.length;		    
+            var total = parseInt((letras-espacos)).toFixed(0);
+                
+            total=total.replace(".", ",");
+                
+            $('.total').html((total).replace(/\B(?=(\d{3})+(?!\d))/g, ".")); 
+            });
+        }); 
+
+    </script>
+
+</body>
+</html>
