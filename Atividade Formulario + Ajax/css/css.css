@@ -1,0 +1,33 @@
+body{
+    background: #BB9EE1;
+}
+.mensagemErro{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+
+}
+.OrgFomr{
+    /* text-align: center; */
+    /* position: absolute; */
+    margin-left: 375px;
+    margin-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-right: 375px;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    border-radius: 30px;
+    background-color: #fff;
+  }
+
+.CorEmTabela{
+    background: #680CDE;
+    color: #CDCDCD;
+}
+table{
+    margin-top: 50px;
+    margin-bottom: 150px;
+    border-radius: 5px;
+}
+
