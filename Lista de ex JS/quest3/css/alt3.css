@@ -1,0 +1,42 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #6C7A89;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.vermelho{
+    background: red;
+    width: 150px;
+    height: 150px;
+}
+.amarelo{
+    background: yellow;
+    width: 150px;
+    height: 150px;   
+}
+.verde{
+    background: green;
+    width: 150px;
+    height: 150px;
+}
+.azul{
+    width: 150px;
+    height: 150px;
+    background: blue;
+}
+.branco {
+    width: 150px;
+    height: 150px;
+    background: white;
+}
+.preto{
+    width: 150px;
+    height: 150px;
+    background: black;
+}      
+body {
+    margin: 0px; 
+}  

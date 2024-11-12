@@ -1,0 +1,13 @@
+.OrgForm{
+    text-align: left;
+    position: absolute;
+    background-color: cornflowerblue;
+    padding-left: 25px;
+    padding-right: 35px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    display: inline-block;
+    border-radius: 8px;
+    color: #3c3c47;
+    margin-left: 20%;
+}

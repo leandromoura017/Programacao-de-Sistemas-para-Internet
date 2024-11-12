@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quetão 4</title>
+    <script src="js/alt4.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/alt4.css">
+</head>
+<body>
+    <div class="OrgForm">
+        <form action="" id="formulario" method="POST" name="formulario">
+           
+            <p>Nome:</p><input id="nome" name="nome" placeholder="Apenas letras" width="150">
+            <p>Email:</p><input type="email" id="email" name="email" placeholder="Digite seu Email" size="20">
+            <p>Idade:</p><input id="idade" name="idade" placeholder="Digite sua idade" size="20">
+            <p>Endereço:</p><input id="endereço" name="endereço" placeholder="Digite seu Endereço" size="20">
+
+
+
+            <p>Telefone:</p><input id="tel" name="tel" placeholder="Digite seu Telefone" size="20">
+            <p>Data de Nascimento:</p><input id="datnas" name="datnas" placeholder="Digite sua data de nascimento." size="20">
+            <p>CPF:</p><input id="cpf" name="cpf" placeholder="Digite seu CPF"  OnKeyPress="formatar('###.###.###-##', this)"  size="20">
+            
+            
+            <p>Sexo:</p>
+            <input type="radio" id="sexo" name="sexo" value="masc" checked> Masculino<br>
+            <input type="radio" id="sexo" name="sexo" value="fem"> Feminino
+
+            <p>senha:</p><input id="senha" name="senha" placeholder="Digite sua senha" size="20">
+            <p>Confirmação de senha:</p><input id="confsenha" name="confsenha" placeholder="Confirme sua senha:" size="20">
+            
+            <input type="submit" value="Validar" onclick="Validar()">
+        
+        </form>
+    </div>
+</body>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</html>
