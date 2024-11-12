@@ -1,0 +1,44 @@
+body{
+    background-color: #0f266b ;
+}
+.fixa{
+    position: absolute;
+    padding-top: 50px;
+    padding-left: 250px;
+}
+h2{
+   margin: 0;
+   text-align: center;
+}
+.OrgFomr{
+    text-align: right;
+    position: absolute;
+    background-color: #ffffff;
+    margin-left: 850px;
+    margin-top: -20px;
+    padding-left: 25px;
+    padding-right: 35px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    font-family: "Monaco", "Courier New", monospace;
+    display:inline-block;
+    border-radius: 5px;
+}
+h1{
+    font-family: "Monaco", "Courier New", monospace;
+    text-align: center;
+    margin-top: 75px;
+    font-size: 100px;
+    color: #fff;
+}
+input{
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 8px;
+}
+input[type=submit] {
+background: #006699;
+color: #ffffff;
+border-radius: 4px;
+padding: 8px;
+}
